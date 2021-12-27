@@ -1,6 +1,5 @@
 import styles from '@styles/Post.module.css';
 import PostContent from '@components/PostContent';
-import HeartButton from '@components/HeartButton';
 import AuthCheck from '@components/AuthCheck';
 import Metatags from '@components/Metatags';
 import { UserContext } from '@lib/context';
@@ -68,9 +67,7 @@ export default function Post(props) {
       </section>
 
       <aside className="card">
-        <p>
-          <strong>{post.heartCount || 0} 🤍</strong>
-        </p>
+
 
         <AuthCheck
           fallback={
@@ -79,8 +76,7 @@ export default function Post(props) {
             </Link>
           }
         >
-          <HeartButton postRef={postRef} />
-        </AuthCheck>
+          </AuthCheck>
 
         {currentUser?.uid === post.uid && (
           <Link href={`/admin/${post.slug}`}>

@@ -20,7 +20,7 @@ export default function Navbar() {
       <ul>
         <li>
           <Link href="/">
-            <button className="btn-logo">NXT</button>
+            <button className="btn-logo">OVERLAPP CMS</button>
           </Link>
         </li>
 
@@ -32,7 +32,7 @@ export default function Navbar() {
             </li>
             <li>
               <Link href="/admin">
-                <button className="btn-blue">Write Posts</button>
+                <button className="btn-blue">Create Data</button>
               </Link>
             </li>
             <li>

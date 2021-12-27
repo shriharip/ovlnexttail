@@ -11,7 +11,6 @@ const LIMIT = 10;
 export async function getServerSideProps(context) {
   const postsQuery = firestore
     .collectionGroup('posts')
-    .where('published', '==', true)
     .orderBy('createdAt', 'desc')
     .limit(LIMIT);
 
@@ -37,7 +36,6 @@ export default function Home(props) {
 
     const query = firestore
       .collectionGroup('posts')
-      .where('published', '==', true)
       .orderBy('createdAt', 'desc')
       .startAfter(cursor)
       .limit(LIMIT);
@@ -54,12 +52,12 @@ export default function Home(props) {
 
   return (
     <main>
-      <Metatags title="Home Page" description="Get the latest posts on our site" />
+      <Metatags title="Home Page" description="All the latest things added" />
 
       <div className="card card-info">
-        <h2>💡 Next.js + Firebase - The Full Course</h2>
-        <p>Welcome! This app is built with Next.js and Firebase and is loosely inspired by Dev.to.</p>
-        <p>Sign up for an 👨‍🎤 account, ✍️ write posts, then 💞 heart content created by other users. All public content is server-rendered and search-engine optimized.</p>
+        <h2>💡 Overlapp CMS - The data behind the app!!</h2>
+        <p>Welcome! Only authorized users will be able to add data in this project.</p>
+        <p>If you are interested to contribute, please send an email @.....</p>
       </div>
      
       <PostFeed posts={posts} />

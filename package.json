@@ -1,6 +1,6 @@
 {
-  "name": "nextfire",
-  "version": "0.1.0",
+  "name": "overlappcms",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -19,5 +19,10 @@
     "react-hook-form": "^6.14.2",
     "react-hot-toast": "^1.0.2",
     "react-markdown": "^5.0.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "postcss": "^8.2.12",
+    "tailwindcss": "^2.1.2"
   }
 }

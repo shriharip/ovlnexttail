@@ -6,8 +6,7 @@ export default function PostFeed({ posts, admin }) {
 
 function PostItem({ post, admin = false }) {
   // Naive method to calc word count and read time
-  const wordCount = post?.content.trim().split(/\s+/g).length;
-  const minutesToRead = (wordCount / 100 + 1).toFixed(0);
+  const category = post?.category;
 
   return (
     <div className="card">
@@ -21,14 +20,13 @@ function PostItem({ post, admin = false }) {
         <h2>
           <a>{post.title}</a>
         </h2>
-      </Link>
-
+       </Link>
+       {post && post.image && <img src={`${post.imgUrl}`}  width='100' height='50'/>}
       <footer>
         <span>
-          {wordCount} words. {minutesToRead} min read
+          In Category {category}
         </span>
-        <span className="push-left">💗 {post.heartCount || 0} Hearts</span>
-      </footer>
+       </footer>
 
       {/* If admin view, show extra controls for user */}
       {admin && (
@@ -39,7 +37,6 @@ function PostItem({ post, admin = false }) {
             </h3>
           </Link>
 
-          {post.published ? <p className="text-success">Live</p> : <p className="text-danger">Unpublished</p>}
         </>
       )}
     </div>
